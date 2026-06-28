@@ -4,6 +4,10 @@ A lightweight Windows shutdown scheduler built with [Tauri v2](https://v2.tauri.
 
 Set a timer or pick a specific time to shut down your machine. ~8MB standalone executable, instant startup.
 
+## Download
+
+Grab the standalone `.exe` from [Releases](https://github.com/Manas-Kushwaha-99/system-shutdown/releases) — no installation required, just download and run.
+
 ## Features
 
 - **Timer-based shutdown** — set hours and minutes
