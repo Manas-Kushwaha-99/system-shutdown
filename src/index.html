@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>System Shutdown</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-window">
+    <div class="titlebar">
+      <span class="titlebar-title">SYSTEM SHUTDOWN</span>
+      <div class="titlebar-controls">
+        <button class="titlebar-btn btn-minimize" id="minimizeBtn"></button>
+        <button class="titlebar-btn btn-close" id="closeBtn"></button>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="header">
+        <div class="icon-wrapper">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.36 6.64a9 9 0 11-12.73 0M12 2v10"/>
+          </svg>
+        </div>
+        <h1>Schedule Shutdown</h1>
+        <p>Set a timer or pick a specific time</p>
+      </div>
+
+      <div class="card">
+        <div class="main-view" id="mainView">
+          <div class="input-group">
+            <label class="input-label">Shutdown After</label>
+            <div class="time-inputs">
+              <div class="input-wrapper">
+                <input type="number" class="time-input" id="hoursInput" min="0" max="23" placeholder="00">
+                <span class="input-suffix">Hours</span>
+              </div>
+              <div class="input-wrapper">
+                <input type="number" class="time-input" id="minutesInput" min="0" max="59" placeholder="00">
+                <span class="input-suffix">Minutes</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="divider">
+            <div class="divider-line"></div>
+            <span class="divider-text">or</span>
+            <div class="divider-line"></div>
+          </div>
+
+          <div class="input-group">
+            <label class="input-label">Specific Time</label>
+            <input type="time" class="specific-time-input" id="specificTimeInput">
+          </div>
+
+          <div class="presets">
+            <button class="preset-btn" data-minutes="15">15m</button>
+            <button class="preset-btn" data-minutes="30">30m</button>
+            <button class="preset-btn" data-minutes="60">1h</button>
+            <button class="preset-btn" data-minutes="120">2h</button>
+          </div>
+
+          <button class="start-btn" id="startBtn">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+            </svg>
+            Start Timer
+          </button>
+        </div>
+
+        <div class="timer-view" id="timerView">
+          <div class="countdown-ring">
+            <span class="countdown-text" id="countdownText">00:00:00</span>
+          </div>
+          <p class="timer-info">Time remaining</p>
+          <p class="timer-target" id="targetTimeText"></p>
+          <button class="cancel-btn" id="cancelBtn">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+            </svg>
+            Cancel Shutdown
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="toast" id="toast"></div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
