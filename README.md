@@ -67,3 +67,7 @@ The frontend invokes two Tauri commands via IPC:
 - `cancel_shutdown()` — runs `shutdown /a`
 
 Both commands use `tokio::process::Command` so the UI never freezes.
+
+## Acknowledgments
+
+This project was developed with assistance from [Command Code](https://commandcode.ai), an AI-powered coding assistant.
